@@ -1,0 +1,19 @@
+题目大意：从0,0跳到x,y，步幅0到k，xy轴顺序一次交换，先x后y，求需要的步数
+思路：上取整除法，两次跳跃为一组，看x和y那个跳的次数多选哪个，因为先x，所以x*2-1，y是*2，取max
+code：
+'''
+int upqz(int x,int y)
+{
+    return (x+y-1)/y;
+}
+
+void solve()
+{
+    int x,y,k;
+    cin >> x >> y >> k;
+    int xx = upqz(x,k);
+    int yy = upqz(y,k);
+    cout << max(xx*2-1,yy*2) << endl;
+}   
+
+'''
